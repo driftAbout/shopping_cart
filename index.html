@@ -3,19 +3,52 @@
   <head>
     <title>
     </title>
-    <link>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
     </header>
     <main>
       <form>
+<!-- A dropdown menu of all BusMall products (<select> and <option> will be needed) -->
+        <fieldset>
+          <select name="cars" size="3">
+            <option value="bag">Bag</option>
+            <option value="banana">Banana</option>
+            <option value="bathroom">bathroom</option>
+            <option value="boots">Banana</option>
+            <option value="breakfast">Bag</option>
+            <option value="bubblegum">Banana</option>
+            <option value="chair">Bag</option>
+            <option value="cthulhu">Banana</option>
+            <option value="dog-duck">Bag</option>
+            <option value="dragon">Banana</option>
+            <option value="pen">Bag</option>
+            <option value="pet-sweep">Banana</option>
+            <option value="scissors">Bag</option>
+            <option value="shark">Banana</option>
+            <option value="sweep">Bag</option>
+            <option value="tauntaun">Banana</option>
+            <option value="unicorn">Bag</option>
+            <option value="usb">Banana</option>
+            <option value="water-can">Bag</option>
+            <option value="wine-glass">Banana</option>
+          </select>
+          <label for="name">Store Name:</label>
+          <input type="text" name="name" maxlength="100" required>
+          <span>Name of store</span>
+        </fieldset>
+<!-- An input of "type=number" to indicate quantity to purchase -->
         <fieldset>
         </fieldset>
+<!-- Text inputs for each of: name, street, city, state, ZIP code, and phone number -->
         <fieldset>
         </fieldset>
+<!-- An input of "type=number" to enter a credit card number -->
         <fieldset>
         </fieldset>
+<!-- A "Add To Cart" button to submit the order. When the order is submitted, all of the input fields should be cleared -->
         <fieldset>
         </fieldset>
       </form>
