@@ -1,7 +1,7 @@
 main {
   width: 960px;
   margin: 0 auto;
-  margin-top: 140px;
+  margin-top: 160px;
 }
 
 header {
@@ -62,4 +62,31 @@ footer p {
   font-family: helvetica;
   margin-top: 20px;
   color: #999;
+}
+
+.shopping_cart {
+  margin-top: 30px;
+  width: 960px;
+  height: 360px;
+  border: #F7D50A 3px solid;
+  border-radius: 5px;
+  background:#777;
+}
+
+.shopping_cart section{
+  width: 100%;
+  background: #ddd;
+
+}
+
+#user_information {
+  width: 390px;
+  height:360px;
+  float: left;
+}
+
+#orders {
+  float: right;
+  width: 560px;
+  height:360px;
 }
