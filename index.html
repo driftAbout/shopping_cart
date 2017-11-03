@@ -23,24 +23,10 @@
         <button id="add_to_cart" type="button">Add to Cart</button>
         <form id="order_form">
   <!-- A dropdown menu of all BusMall products (<select> and <option> will be needed) -->
-        <fieldset>
-            <label for="quantity">Quantity:</label>
-            <select name="quantity" size="1">
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-              <option value=4>4</option>
-              <option value=5>5</option>
-              <option value=6>6</option>
-              <option value=7>7</option>
-              <option value=8>8</option>
-              <option value=9>9</option>
-              <option value=10>10</option>
-            </select>
-          </fieldset>
           <fieldset>
             <label for="product">Product:</label>
             <select name="product" size="1">
+              <option disabled selected value> - products - </option>
               <option value="bag">Bag</option>
               <option value="banana">Banana</option>
               <option value="bathroom">Bathroom</option>
@@ -63,22 +49,22 @@
               <option value="wine-glass">Wine-glass</option>
             </select>
           </fieldset>
-  <!-- An input of "type=number" to indicate quantity to purchase -->
-          <!-- <fieldset>
-            <label for="quantity">Quantity:</label>
-            <select name="quantity" size="1">
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-              <option value=4>4</option>
-              <option value=5>5</option>
-              <option value=6>6</option>
-              <option value=7>7</option>
-              <option value=8>8</option>
-              <option value=9>9</option>
-              <option value=10>10</option>
-            </select>
-          </fieldset> -->
+          <!-- An input of "type=number" to indicate quantity to purchase -->
+          <fieldset>
+              <label for="quantity">Quantity:</label>
+              <select name="quantity" size="1">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+              </select>
+            </fieldset>
   <!-- Text inputs for each of: name, street, city, state, ZIP code, and phone number -->
           <fieldset>
             <label for="name">Name:</label>

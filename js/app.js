@@ -78,7 +78,7 @@ function add_product_to_cart(e) {
 form.product.onchange = setDisplayImage;
 
 function setDisplayImage(e){
-  product_display.innerHTML;
+  product_display.innerHTML = '';
   var product_image = document.createElement('img');
   product_image.setAttribute('src', products[this.value].imagePath);
   product_display.appendChild(product_image);
