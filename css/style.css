@@ -179,10 +179,12 @@ button {
 }
 
 #selected_items_list input[type="number"] {
-  height: 32px;
+  height: 16px;
   width: 32px;
   margin-right: 30px;
   float: right;
+  padding:8px;
+  font-size: 16px;
 }
 
 #selected_items_list li p {

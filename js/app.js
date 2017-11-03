@@ -5,6 +5,8 @@ var products = {};
 var cart_items = [];
 var add_to_cart_btn = document.getElementById('add_to_cart');
 var product_display = document.getElementById('product_display');
+// Look for form data
+var form = document.getElementById('order_form');
 
 var imageNames = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'];
 
@@ -24,10 +26,8 @@ Product.prototype.createImageInfo = function(){
 
 
 // Make purchase form data into object
-function Order(product, quantity, name, address, city, state, zip, phone, credit_card) {
-  this.product = product;
-  this.fileName = 'image/' + name + '.jpg';
-  this.quantity = 0;
+function Order(products, name, address, city, state, zip, phone, credit_card) {
+  this.products = products;
   this.name = name;
   this.address = address;
   this.city = city;
@@ -37,16 +37,15 @@ function Order(product, quantity, name, address, city, state, zip, phone, credit
   this.credit_card = credit_card;
 };
 
-// Look for form data
-var form = document.getElementById('order_form');
-form.addEventListener('add_to_cart', formData);
+form.addEventListener('submit', formData);
 
-function formData(){};
-
-
-
-
-
+function formData(e) {
+  e.preventDefault();
+  var order = new Order(cart_items, this.name, this.address, this.city, this.state, this.zip, this.phone, this.credit_card);
+  localStorage.order = JSON.stringify(order);
+  localStorage.products = JSON.stringify(products);
+  window.location.href = 'cart.html';
+};
 
 //This function will create an object of all the products
 // the products productName is used as the key
@@ -57,22 +56,16 @@ function build_product_objects(){
     products[product.productName] = product;
   }
 }
-//example data structure of products
-/*
+
+/*//example data structure of products
 products = {
   bag:{fileName: 'bag.jpg', imagePath: 'images/bag.jpg', productName: 'bag', imageFolder: 'images', createImageInfo()}
 }
-
-if we save the Order and products in localStorage I can easily parse the info.
-
 */
-
-build_product_objects()
 add_to_cart_btn.addEventListener('click', add_product_to_cart);
 
 function add_product_to_cart(e) {
-  cart_items.push({prodcut:form.product.value, quantity:form.quantity.value});
-  console.log('cart_items:', cart_items);
+  cart_items.push({product:form.product.value, quantity:form.quantity.value});
 }
 
 form.product.onchange = setDisplayImage;
@@ -83,3 +76,5 @@ function setDisplayImage(e){
   product_image.setAttribute('src', products[this.value].imagePath);
   product_display.appendChild(product_image);
 }
+
+build_product_objects();
