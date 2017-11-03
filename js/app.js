@@ -2,7 +2,8 @@
 
 var product;
 var products = {};
-var cart_items = [];
+//var cart_items = [];
+var cart_items = {};
 var add_to_cart_btn = document.getElementById('add_to_cart');
 var product_display = document.getElementById('product_display');
 // Look for form data
@@ -41,7 +42,17 @@ form.addEventListener('submit', formData);
 
 function formData(e) {
   e.preventDefault();
-  var order = new Order(cart_items, this.name, this.address, this.city, this.state, this.zip, this.phone, this.credit_card);
+  console.log('name: ',e.target.name.value);
+
+  var name = e.target.name.value;
+  var address = e.target.address.value;
+  var city = e.target.city.value;
+  var state = e.target.state.value;
+  var zip = e.target.zip.value;
+  var phone = e.target.phone.value;
+  var credit_card = e.target.credit_card.value;
+
+  var order = new Order(cart_items, name, address, city, state, zip, phone, credit_card);
   localStorage.order = JSON.stringify(order);
   localStorage.products = JSON.stringify(products);
   window.location.href = 'cart.html';
@@ -65,7 +76,11 @@ products = {
 add_to_cart_btn.addEventListener('click', add_product_to_cart);
 
 function add_product_to_cart(e) {
-  cart_items.push({product:form.product.value, quantity:form.quantity.value});
+  //cart_items.push({product:form.product.value, quantity:form.quantity.value});
+  var selectedProduct = form.product.value
+  if(!selectedProduct) return;
+  cart_items[selectedProduct] = form.quantity.value;
+  console.log(cart_items);
 }
 
 form.product.onchange = setDisplayImage;

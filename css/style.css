@@ -82,6 +82,9 @@ footer p {
   width:180px;
   float:right;
   margin-top: 20px;
+  border: 2px solid #777;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 #product_display img {
@@ -106,6 +109,10 @@ button {
   font-size: 14px;
   padding: 8px 16px;
   border-color: #ccc;
+}
+
+#add_to_cart:focus {
+  outline: none;
 }
 
 #checkout_btn {
@@ -143,13 +150,13 @@ button {
   width: 555px;
   height:340px;
   margin-left: 5px;
+  overflow: auto;
 }
 
 /**** shoping cart line items ****/
 
 #selected_items_list {
   margin: 15px;
-  overflow: auto;
 }
 
 #selected_items_list li{
@@ -166,6 +173,10 @@ button {
   padding: 8px 16px;
   float: left;
   margin-left: 30px;
+}
+
+#selected_items_list button:focus {
+  outline: none;
 }
 
 #selected_items_list img {
@@ -223,4 +234,33 @@ button {
 
 #add_to_cart {
   float: right;
+}
+
+#user_information {
+
+}
+
+
+.user_labels {
+  margin-left:30px;
+  display:inline-block;
+}
+
+.user_data {
+  display:inline-block;
+}
+
+.user_labels p{
+  margin: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.user_data p {
+  margin: 10px;
+  text-align:left;
+}
+
+.user_data p:first-of-type, .user_labels p:first-of-type {
+  margin-top:60px;
 }
