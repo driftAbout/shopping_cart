@@ -78,12 +78,13 @@ footer p {
 }
 
 #product_display {
+  height: 180px;
+  width:180px;
   float:right;
   margin-top: 20px;
 }
 
 #product_display img {
-  background-image: url('https://placehold.it/180x180');
   height: 180px;
   width:180px;
 }
