@@ -1,8 +1,14 @@
 'use strict';
 
+function Product(name) {
+  this.name = name;
+  this.fileName = 'image/' + name + '.jpg';
+};
+
 // Make purchase form data into object
-function Purchase(product, quantity, name, address, city, state, zip, phone, credit_card) {
+function Order(product, quantity, name, address, city, state, zip, phone, credit_card) {
   this.product = product;
+  this.fileName = 'image/' + name + '.jpg';
   this.quantity = 0;
   this.name = name;
   this.address = address;
