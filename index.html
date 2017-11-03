@@ -11,7 +11,7 @@
     </header>
     <main>
       <h2>Select the product and quantity, then enter your shipping address.</h2>
-      <form>
+      <form id="order_form">
 <!-- A dropdown menu of all BusMall products (<select> and <option> will be needed) -->
         <fieldset>
           <label for="product">Product:</label>
@@ -133,12 +133,12 @@
         </fieldset>
 <!-- An input of "type=number" to enter a credit card number -->
         <fieldset>
-          <label for="creditcard">Credit Card Number:</label>
+          <label for="credit_card">Credit Card Number:</label>
           <!-- <input type="number" name="creditcard" maxlength="100" required> -->
           <input class="card-number" type="tel" placeholder="Card number" maxlength="19" x-autocompletetype="cc-number" autocompletetype="cc-number" autocorrect="off" spellcheck="off" autocapitalize="off">
         </fieldset>
 <!-- A "Add To Cart" button to submit the order. When the order is submitted, all of the input fields should be cleared -->
-        <button id="addToCart" type="submit">Add to Cart</button>
+        <button id="add_to_cart" type="submit">Add to Cart</button>
       </form>
     </main>
   <script src="js/app.js"></script>
